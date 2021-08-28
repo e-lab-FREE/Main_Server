@@ -1,0 +1,217 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>E Lab</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/png" href="">
+<link rel="shortcut icon" href="http://e-lab.ist.eu/rec.web/faviconElab.ico">
+<link rel="stylesheet" href="css/elab.css">
+<link rel="stylesheet" href="css/toggle-button.css">
+<link rel="stylesheet" href="css/tool-bar.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script src ='https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js'></script>
+<script src ='https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js'></script>
+<script src ='https://cdnjs.cloudflare.com/ajax/libs/jquery-replace-text/1.1.0/jquery-replace-text-min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<script src="https://unpkg.com/chartjs-plugin-zoom@1.0.0-beta.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+
+
+<script src='config/env.js'></script>
+
+</head>
+<body>
+	<br/>
+	
+	
+	<table class="tg">
+		<thead>
+		  <tr>
+			<th  colspan="4">
+			<div class="clearfix float-my-children">
+				<div style="margin-left: 100px;margin-top: 10px;">
+				  <img src="http://e-lab.ist.eu/rec.web/javax.faces.resource/elab_logo.png.faces?ln=images" >
+				</div>
+				
+				<div style="margin-left: 5px; margin-top: 15px; color:#86b300;">
+				  <h1>- Cavidade T1</h1>
+				</div>
+				</div>
+				<div style = "width:1600px;">
+				
+					<nav>
+						<ul>
+							<li><a href="/dev">Home</a></li>
+							<li><a href="/trabalho">Trabalho</a></li>
+						</ul>
+					</nav>
+				</div>
+				
+				<br/>
+				
+				
+				<br/>
+				<hr/>	
+			</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>
+				<div style="margin-left: 30px;">
+					<div>
+						<label id="point_in">Points in : </label>
+					</div>
+					<br/>
+					<div>
+						<label id="total_point">Total points : </label>
+					</div>
+					<br/>
+					<div>
+						<label id="pi">Pi : </label>
+					</div>
+				</div>
+				<br/>
+				<br/>
+				<div style="margin-left: 30px;">
+                            <p class="sansserif">R :
+		                     	<input id="R" type="text" name="R" value="1"/>
+		                    </p>                                    
+							<p class="sansserif">Iteration :
+								<input id="Iteration" type="text" name="Iteration" value="10"/>
+							</p>
+				</div>
+				
+				
+
+                                              
+				<div class="sansserif" style="margin-left: 30px;">
+				
+					<div>
+						<button id="button_strat_MC" onclick="Start_MC()">Start </button>
+					</div>
+				</div>
+			</td>
+			<td  colspan="2" rowspan="3">
+			
+				<!-- <div style="margin-left: 50px; width: 1000px;">
+					<canvas id="graph_1"  width="500" height="200"></canvas>
+				</div> -->
+					<div id='graph' style="margin-left: 5px; width: 1000px; height: 1000px;">
+					</div>
+					<div>
+						<label id="coisa">x </label>
+					</div>
+				<hr/>
+				<br/>
+			
+			</td>
+			
+		  </tr>
+		  <!-- <tr>
+			<td class="tg-0pky" colspan="2" rowspan="4">
+				<table class="table table-striped" style="margin-left: 400px; width: 1000px;">
+					<tbody id="myTable" >
+					</tbody>
+				</table>
+                        <div class="container ">
+                           <div id="pagination-wrapper"style="margin-left: 200px;"></div>
+                        </div>
+                     </td>
+		  </tr>
+		  <tr>
+		  </tr> -->
+		</tbody>
+	</table>
+	
+	
+  
+	
+
+    
+	
+
+
+	
+	
+	
+<!-- 	<div class="sansserif" style="margin-left: 30px;">
+	
+	<div>
+		<button id="button_strat_arinst_2" onclick="putArinst()">Start Arinst</button>
+	</div>
+	
+	
+	<div>
+		<button id="button_strat_total" onclick="getCsv()">Start</button>
+	</div>
+	
+	<div>
+		<button id="button_data_csv" onclick="parseData()">Buscar data</button>
+	</div>
+
+	<div>
+		<button id="button_data_csv2" onclick="parseData2()">Buscar data 2</button>
+	</div>	
+		
+	<div>
+		<button id="button_desenhar" onclick="drawGraph()">Desenhar</button>
+	</div>
+
+	
+	<hr/>
+	<br/>
+	<div>
+        <label id="pressure">Pressure : </label>
+	</div>
+	<div>
+        <label id="filenames">Files : </label>
+	</div>
+	</div> -->
+	
+
+	
+	
+
+  <!-- <div id='graph_1' style="margin-left: 50px; width: 1000px;">
+  <!-- Plotly chart will be drawn inside this DIV </div>-->
+
+	<!-- <div style="margin-left: 50px; width: 1000px;">
+		<canvas id="graph_1"  width="500" height="200"></canvas>
+	</div>
+
+	<div>
+		<p id="ip"></p>
+	</div>
+  <script> 
+    console.log(env.IP, env.USER, env.HOSTNAME);
+    document.getElementById("ip").innerHTML = env.IP;
+  </script>
+  
+  <label class="switch">
+    <input type="checkbox" id="togBtn">
+     <div class="slider round">
+      
+      <span class="on">LIGAR</span>
+      <span class="off">DESLIGAR</span>
+      
+     </div>
+  </label>
+
+  <br/> -->
+</body>
+
+<script type="text/javascript" src='js/elab.js'></script>
+<script type="text/javascript" src='js/cavidade_vp.js'></script>
+
+</html>
