@@ -1,0 +1,48 @@
+{
+  "id": "Monte_Carlo",
+  "test_rpi": "True",
+  "protocols": [
+    {
+      "exp_paremeters": [
+        {
+          "format": "##0",
+          "nome":"R",
+          "min_val": "1",
+          "max_val": "50"
+        },
+        {
+          "format": "##1",
+          "nome":"Iteration",
+          "min_val": "1",
+          "max_val": "500000"
+        }
+      ],
+      "measurement_channels": {
+        "num_channels": "5",
+        "channel_format": [
+          "##0.0",
+          "##0.1",
+          "#####2",
+          "#####3",
+          "#####4"
+        ]
+      },
+      "timeout": {
+        "default": "40000",
+        "id": "50000",
+        "cfg": "200000",
+        "cur": "200000",
+        "str": "200000",
+        "data_bin": "200000",
+        "no_data": "200000",
+        "end": "200000",
+        "stp": "200000",
+        "rst": "200000"
+      }
+    }
+  ],
+  "errors": [
+    "Incorrect State",
+    "Timeout"
+  ]
+}

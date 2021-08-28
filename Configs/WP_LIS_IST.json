@@ -1,0 +1,95 @@
+{
+  "id": "WP_LIS_IST",
+  "serial_port": {
+    "ports_restrict": [
+      "/dev/ttyAMA0"
+    ],
+    "baud": "115200",
+    "numbits": "8",
+    "stopbits": "1",
+    "partitybits": "0",
+    "listening_timeout": "100000",
+    "death_timeout": "10000000"
+  },
+  "protocols": [
+    {
+      "exp_paremeters": [
+        {
+          "step": "1",
+          "nome":"deltaX",
+          "min_val": "3",
+          "max_val": "22"
+        },
+        {
+          "step": "1",
+          "nome":"samples",
+          "min_val": "2",
+          "max_val": "500"
+        }
+      ],
+      "measurement_channels": {
+        "num_channels": "5",
+        "channel_format": [
+          "####",
+          "###.####",
+          "###.####",
+          "###.####",
+          "##.#"
+        ]
+      },
+      "timeout": {
+        "default": "45000",
+        "id": "10000",
+        "cfg": "80000",
+        "cur": "5000",
+        "str": "60000",
+        "data_bin": "120000",
+        "no_data": "60000",
+        "end": "3000000",
+        "stp": "180000",
+        "rst": "180000"
+      }
+    },
+    {
+      "exp_paremeters": [
+        {
+          "step": "1",
+          "min_val": "5",
+          "max_val": "14"
+        },
+        {
+          "step": "1",
+          "min_val": "10",
+          "max_val": "50"
+        }
+      ],
+      "measurement_channels": {
+        "num_channels": "5",
+        "channel_format": [
+          "####",
+          "###.####",
+          "###.####",
+          "###.####",
+          "##.#"
+        ]
+      },
+      "timeout": {
+        "default": "45000",
+        "id": "10000",
+        "cfg": "80000",
+        "cur": "5000",
+        "str": "60000",
+        "data_bin": "120000",
+        "no_data": "60000",
+        "end": "3000000",
+        "stp": "180000",
+        "rst": "180000"
+      }
+    }
+  ],
+  "errors": [
+    "Something wrong happened !",
+    "Sensor has failed.",
+    "Value out of range..."
+  ]
+}
